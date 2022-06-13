@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0.5in , bottom=0.5in,left=1in, right=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+
+\raggedright
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+% DEFINITIONS FOR RESUME
+
+\newcommand{\tab}{\hspacet *{2em}}
+
+\newcommand{\area}[2]{\vspace*{-9pt} \begin{verse}\textbf{#1}   #2 
+\end{verse}  }
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
+\newcommand{\header}[1]{{\hspace*{-15pt}\vspace*{6pt} \textsc{#1}} 
+\vspace*{-6pt} \lineunder}
+\newcommand{\employer}[3]{{ \textbf{#1} \hfill #2\\ \textbf{\emph{#3}}\\  
+}}
+\newcommand{\employerwithguide}[4]{{ \textbf{#1} \hfill(#2)\\ 
+\textbf{\emph{#3}}\\ \emph{#4}  }}
+\newcommand{\project}[3]{{ \textbf{#1} (#2)\\ \emph{#3}\\  }}
+\newcommand{\projectnoguide}[2]{{ \textbf{#1} (#2)\\  }}
+\newcommand{\contact}[2]{
+%\vspace*{-8pt} 
+\begin{center}
+{\LARGE \scshape {#1}}\\
+%#2 \lineunder
+#2
+\end{center}
+\vspace*{-8pt}
+}
+\newcommand{\sbt}{\,\begin{picture}(-1,1)(-1,-3)\circle*{2}\end{picture}\ 
+}
+\newcommand{\lbt}{\,\begin{picture}(-1,1)(-1,-3)\circle*{3}\end{picture}\ 
+}
+\newenvironment{achievements}{
+    \begin{list}{$\lbt$}{
+        \topsep 0pt
+        \itemsep 0pt
+        \addtolength{\leftmargin}{-0.1in}
+    }
+}
+{
+    \vspace*{4pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses}[4]{
+ \textbf{#1} \hfill{#2}\\
+    #3\\
+\vspace*{5pt}
+}
+\newcommand{\school}[4]{
+ \textbf{#1} #2 $\bullet$ #3\\
+#4 \\
+}
+
+% END RESUME DEFINITIONS
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\small
+\smallskip
+\vspace*{-35pt}
+
+% figure out how to link my website
+
+\contact{Nikolai Nekrutenko}
+{nan34@cornell.edu $\sbt$ nnekrut.netlify.app $\sbt$ 
+github.com/NikolaiTeslovich}
+\vspace{2mm}
+
+
+\header{Education}
+\vspace{2mm}
+\schoolwithcourses{Cornell University, Ithaca, NY}{Aug 2021 - 
+Present}{Undergraduate pursuing a major in Physics with a minor in 
+Computer Science}
+
+\schoolwithcourses{Pennsylvania State University, State College, PA}{Jan 
+2021 - May 2021}{Non-matriculated student taking Calculus II, General 
+Chemistry 1 and 2}
+\hfill{}
+
+\header{Coursework}
+\vspace{2mm}
+\begin{achievements}
+\justifying
+\item Completed: Honors Mechanics and Special Relativity, Honors 
+Electricity and Magnetism, Multi-Variable Calculus, Differential 
+Equations, Intro to Computing Using Python  
+\item Current Semester: Honors Waves and Thermal Physics, Linear Algebra, 
+Objected-Oriented Programming and Data Structures 
+\end{achievements}
+
+\header{Experience}
+\vspace{2mm}
+\schoolwithcourses{Cornell University, Student Researcher}{Mar 2022 - 
+Present}
+{Member of Professor Valla Fatemi's lab at the department of Applied and 
+Engineering Physics. Using QCoDeS, a quantum computer data acquisition 
+framework, to run experiments. Interfacing with equipment and sensors over 
+VISA by developing drivers in Python. Aiding with the design of 
+distillation refrigerators.}
+
+\schoolwithcourses{Cornell Blockchain, Research and Development Team 
+Member}{Sep 2021 - Present}
+{Worked on establishing a DAO for the club, helped advertise the club to 
+attract new applicants, and assisted with club recruitment by interviewing 
+several applicants.}
+
+\schoolwithcourses{The Rocket Lab Initiative, Payload Engineer}{Sep 2020 - 
+Jun 2021}
+{Prototyped a Raspberry Pi sensor payload in a team for a model rocket to 
+assess the rocket’s actual performance against that of computer-simulated 
+models in a Pennsylvania State University outreach.}
+
+\schoolwithcourses{State High Model Aeronautics Club, President and 
+Co-Founder}{Oct 2019 - Jun 2021}{Co-founded a club focused on learning 
+about aeronautics through the design, construction, and flight of 
+remote-controlled model aircraft. Wrote several grants to accumulate over 
+two thousand dollars in funding.}
+
+\schoolwithcourses{Pennsylvania State University, Student Researcher}{Jul 
+2019 - Aug 2019}{Member of Professor Slava Rotkin's lab at the Materials 
+Research Institute. Developed a Python program in Jupyter Lab to filter 
+out background noise from scanning near-field optical microscopy scans.}
+\hfill{}
+
+\header{Skills}
+\vspace{2mm}
+\begin{achievements}
+\justifying
+\item Fluent in: Russian, French, English
+\item Languages: Python, Javascript, Solidity, Shell
+\item Programming Tools: git, Jupyter Lab, Pandas, Vega-lite, Observable
+\item Website Design: Hugo, Netlify, GitHub Pages, Google Analytics
+\item Software: Autodesk Fusion 360, Ultimaker Cura, Blender, Adobe 
+Photoshop, Adobe Lightroom, Adobe Premiere Pro, Davinci Resolve, 
+OpenRocket
+\item Prototyping Skills: Soldering, CNC machine design and operation, CAD 
+design and printing using SLA and FDM systems
+\item Misc: Arduino, Raspberry Pi, Photography, Cinematography, Drone 
+piloting and construction
+\end{achievements}
+
+\header{Projects}
+\vspace{2mm}
+\schoolwithcourses{Developing MinerWrangler}{Nov 2020 - Apr 2021}{Wrote a 
+bundle of bash scripts that interacted with the user to automatically 
+install and configure Ubuntu Server to work headlessly as a cryptocurrency 
+mining server with NVIDIA graphics cards. Documented the installation 
+process and usage guide in great detail.}
+
+\schoolwithcourses{Building and Maintaining a Personal Website}{Apr 2020 - 
+Present}{Build and regularly update my personal website using Hugo, 
+Netlify and Google Analytics with an integrated photo gallery. Made the 
+website gain traffic with Google Search Console}
+
+\schoolwithcourses{Raspberry-Pi LED Clock}{Jun 2018 - Aug 2021}{Designed, 
+soldered and programmed in python a functional 4-segment Raspberry-Pi 
+clock from scratch that syncs with the atomic time servers.}
+\hfill{}
+
+\header{Volunteer Experience - get rid of?}
+\vspace{2mm}
+\schoolwithcourses{A Mountain Wind Martial Arts, Instructor}{Feb 2013 - 
+Present}
+{First Degree Black Belt in Tang Soo Do, a Korean Martial Art. Instruct 
+and help younger students with proper form, technique, and on the 
+practical and philosophical applications of the art. Currently designing 
+and building a website for the studio.}
+
+\hfill{}
+\end{document}
